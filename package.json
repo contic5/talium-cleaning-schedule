@@ -1,0 +1,26 @@
+{
+  "name": "taekwondo-drill-database",
+  "private": true,
+  "version": "0.0.0",
+  "homepage": "https://contic5.github.io/talium-cleaning-schedule",
+  "type": "module",
+  "scripts": {
+    "predeploy": "vite build",
+    "deploy": "gh-pages -d build",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "sass-embedded": "^1.89.2",
+    "vite": "^7.0.4"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.7",
+    "dotenv": "^17.2.0",
+    "google-auth-library": "^10.1.0",
+    "google-spreadsheet": "^4.1.5",
+    "googleapis": "^153.0.0"
+  }
+}
