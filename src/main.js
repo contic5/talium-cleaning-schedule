@@ -74,10 +74,13 @@ async function display_week_jobs(week_jobs)
     
     let week_h1=document.createElement("h1");
     results_div.appendChild(week_h1);
-    week_h1.innerHTML=`Week Jobs for ${week_jobs["date"]}`;
+    week_h1.innerHTML=`Cleaning Jobs for ${week_jobs["date"]}`;
 
-    for(let job of jobs)
+    for(let i=0;i<jobs.length;i++)
     {
+        let job=jobs[i];
+        let next_job=toTitle(jobs[(i+1)%jobs.length]);
+
         let card=document.createElement("div");
         results_div.appendChild(card);
         card.classList.add("card");
@@ -100,7 +103,7 @@ async function display_week_jobs(week_jobs)
 
         let ul=document.createElement("ul");
         card_body.appendChild(ul);
-        card_body.classList.add("list-group");
+        ul.classList.add("list-group");
 
         let names=week_jobs[job].split(",");
         for(let name of names)
@@ -110,6 +113,12 @@ async function display_week_jobs(week_jobs)
             li.classList.add("list-group-item");
             li.innerHTML=toTitle(name);
         }
+
+        let footer_div=document.createElement("div");
+        card.appendChild(footer_div);
+        footer_div.classList.add("card-footer");
+        footer_div.classList.add("text-body-secondary");
+        footer_div.innerHTML=`Next Week: ${next_job}`;
     }
 }
 fetchJobs();
