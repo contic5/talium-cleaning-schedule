@@ -2,7 +2,7 @@
 const public_apiKey = 'AIzaSyCAYyVQq7KCgTqcXN9pcpCJ9T3PnvtlT9g';
 
 const sheetId = '1eZEEbRf6XFXrixm5e_DMDhexqj3ecjnwBJKIV57lxBU';
-const range = 'Sheet1';
+const range = 'Jobs September 2026';
 
 
 async function fetchJobsORIG()
@@ -70,7 +70,7 @@ async function display_week_jobs(week_jobs)
 {
     let results_div=document.getElementById("results");
     results_div.innerHTML="";
-    const jobs=["trash","mop","windex","bathroom"];
+    const jobs=["Trash","Window","Bathroom","Mop"];
     
     let week_h1=document.createElement("h1");
     results_div.appendChild(week_h1);
