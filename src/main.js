@@ -94,12 +94,18 @@ async function display_week_jobs(week_jobs)
         card_body.appendChild(card_title);
         card_title.innerHTML=toTitle(job);
 
+         
+
         /*
         let card_text=document.createElement("p");
         card_body.appendChild(card_text);
         card_text.classList.add("card-text");
         card_text.innerHTML=week_jobs[job];
         */
+
+        let card_description_p=document.createElement("p");
+        card_body.appendChild(card_description_p);
+        card_description_p.innerHTML=job_descriptions[i];
 
         let ul=document.createElement("ul");
         card_body.appendChild(ul);
@@ -121,4 +127,12 @@ async function display_week_jobs(week_jobs)
         footer_div.innerHTML=`Next Week: ${next_job}`;
     }
 }
+
+const job_descriptions=[
+    "Rinse out the fish tank, wipe the fish tank with a wipe and then refill the fish tank.",
+    "",
+    "",
+    "Make sure to add 2 'glugs' of Pine-Sol to the mop bucket."
+];
+
 fetchJobs();
